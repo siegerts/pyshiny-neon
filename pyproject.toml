@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "python-shiny-neon-ai"
+version = "0.1.0"
+description = ""
+authors = ["siegerts <stephen.siegert@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+shiny = "^0.6.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
