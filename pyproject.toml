@@ -2,12 +2,20 @@
 name = "python-shiny-neon-ai"
 version = "0.1.0"
 description = ""
-authors = ["siegerts <stephen.siegert@gmail.com>"]
+authors = ["siegerts"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 shiny = "^0.6.1.1"
+gunicorn = "^21.2.0"
+starlette = "^0.36.1"
+pandas = "^2.2.0"
+psycopg2-binary = "^2.9.9"
+sqlalchemy = "^2.0.27"
+seaborn = "^0.13.2"
+plotly = "^5.19.0"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
 
 
 [build-system]

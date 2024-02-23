@@ -1,8 +1,13 @@
-FROM tiangolo/uvicorn-gunicorn:python3.12
+FROM python:3.11
 
-LABEL maintainer="Sebastian Ramirez <tiangolo@gmail.com>"
+WORKDIR /code
 
-COPY requirements.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+RUN pip install poetry
 
-COPY ./app /app
+COPY ./pyproject.toml ./poetry.lock* /code/
+
+RUN poetry config virtualenvs.create false && poetry install
+
+COPY ./app /code/app
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
